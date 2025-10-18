@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colors, radii, spacing, typography } from '../theme';
+import { colors, radii, spacing, typography, shadows } from '../theme';
 
 export const styles = StyleSheet.create({
   container: {
@@ -10,51 +10,53 @@ export const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: colors.card,
-    borderRadius: radii.md,
+    borderRadius: radii.xl,
     padding: spacing.xl,
     borderWidth: 1,
     borderColor: colors.border,
-    shadowColor: '#000',
-    shadowOpacity: 0.06,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 4 },
-    elevation: 2
+    ...shadows.md
   },
   title: {
     fontSize: typography.subtitle,
-    fontWeight: '600',
+    fontWeight: '700',
     textAlign: 'center',
-    marginBottom: spacing.md,
-    color: colors.foreground
+    marginBottom: spacing.xl,
+    color: colors.foreground,
+    letterSpacing: -0.3
   },
   input: {
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderColor: colors.border,
     borderRadius: radii.md,
     paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
+    paddingVertical: spacing.md,
     marginBottom: spacing.md,
-    backgroundColor: '#fff',
-    color: colors.foreground
+    backgroundColor: colors.background,
+    color: colors.foreground,
+    fontSize: typography.body
   },
   button: {
     backgroundColor: colors.primary,
-    paddingVertical: spacing.sm,
+    paddingVertical: spacing.md,
     borderRadius: radii.md,
     alignItems: 'center',
-    marginTop: spacing.sm
+    marginTop: spacing.sm,
+    ...shadows.md
   },
   buttonText: {
     color: colors.primaryForeground,
-    fontWeight: '600'
+    fontWeight: '700',
+    fontSize: typography.body,
+    letterSpacing: 0.2
   },
   linkWrap: {
-    marginTop: spacing.md,
+    marginTop: spacing.lg,
     alignItems: 'center'
   },
   link: {
-    color: colors.secondary,
-    fontWeight: '600'
+    color: colors.primary,
+    fontWeight: '600',
+    fontSize: typography.body
   }
 });
 

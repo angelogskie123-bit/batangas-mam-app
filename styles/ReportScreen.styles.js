@@ -1,48 +1,49 @@
 import { StyleSheet } from 'react-native';
-import { colors, radii, spacing, typography } from '../theme';
+import { colors, radii, spacing, typography, shadows } from '../theme';
 
 export const styles = StyleSheet.create({
   container: {
-    padding: spacing.xl,
+    padding: spacing.lg,
     backgroundColor: colors.background,
     flexGrow: 1
   },
   header: {
+    fontSize: typography.title,
+    fontWeight: '700',
     textAlign: 'center',
     color: colors.foreground,
-    marginBottom: spacing.sm
+    marginBottom: spacing.lg,
+    letterSpacing: -0.5
   },
   card: {
     backgroundColor: colors.card,
-    borderRadius: radii.md,
-    padding: spacing.xl,
+    borderRadius: radii.xl,
+    padding: spacing.lg,
     borderWidth: 1,
     borderColor: colors.border,
-    shadowColor: '#000',
-    shadowOpacity: 0.06,
-    shadowRadius: 8,
-    shadowOffset: { width: 0, height: 4 },
-    elevation: 2
+    ...shadows.md
   },
   input: {
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderColor: colors.border,
     borderRadius: radii.md,
     paddingHorizontal: spacing.md,
-    paddingVertical: spacing.sm,
+    paddingVertical: spacing.md,
     marginBottom: spacing.md,
-    backgroundColor: '#fff',
-    color: colors.foreground
+    backgroundColor: colors.background,
+    color: colors.foreground,
+    fontSize: typography.body
   },
   picker: {
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderColor: colors.border,
     borderRadius: radii.md,
     marginBottom: spacing.md,
-    backgroundColor: '#fff',
+    backgroundColor: colors.background,
     color: colors.foreground,
-    height: 48,
-    justifyContent: 'center'
+    height: 52,
+    justifyContent: 'center',
+    fontSize: typography.body
   },
   multiline: {
     minHeight: 120,
@@ -51,56 +52,70 @@ export const styles = StyleSheet.create({
   previewGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    gap: spacing.md,
     marginBottom: spacing.md
   },
   previewItem: {
-    width: '48%',
-    marginBottom: spacing.md
+    width: '47%',
+    marginBottom: spacing.sm
   },
   preview: {
     width: '100%',
     height: 140,
-    borderRadius: radii.md
+    borderRadius: radii.md,
+    borderWidth: 1,
+    borderColor: colors.border
   },
   removeThumb: {
     alignItems: 'center',
-    marginTop: spacing.xs
+    marginTop: spacing.sm,
+    paddingVertical: spacing.xs,
+    paddingHorizontal: spacing.sm,
+    backgroundColor: colors.muted,
+    borderRadius: radii.sm
   },
   removeThumbText: {
-    color: '#b00020',
-    fontWeight: '600'
+    color: colors.destructive,
+    fontWeight: '600',
+    fontSize: typography.small
   },
   button: {
     backgroundColor: colors.primary,
-    paddingVertical: spacing.sm,
+    paddingVertical: spacing.md,
     borderRadius: radii.md,
     alignItems: 'center',
-    marginTop: spacing.sm
+    marginTop: spacing.md,
+    ...shadows.md
   },
   buttonText: {
     color: colors.primaryForeground,
-    fontWeight: '600'
+    fontWeight: '700',
+    fontSize: typography.body,
+    letterSpacing: 0.2
   },
   outlineBtn: {
-    borderWidth: 1,
-    borderColor: colors.border,
+    borderWidth: 1.5,
+    borderColor: colors.primary,
     borderRadius: radii.md,
     alignItems: 'center',
-    paddingVertical: spacing.sm,
-    marginBottom: spacing.md
+    paddingVertical: spacing.md,
+    marginBottom: spacing.md,
+    backgroundColor: colors.card
   },
   outlineBtnText: {
-    color: colors.foreground,
-    fontWeight: '600'
+    color: colors.primary,
+    fontWeight: '600',
+    fontSize: typography.body
   },
   logoutBtn: {
-    marginTop: spacing.md,
-    alignItems: 'center'
+    marginTop: spacing.lg,
+    alignItems: 'center',
+    paddingVertical: spacing.sm
   },
   logoutText: {
-    color: '#b00020',
-    fontWeight: '600'
+    color: colors.destructive,
+    fontWeight: '600',
+    fontSize: typography.body
   }
 });
 

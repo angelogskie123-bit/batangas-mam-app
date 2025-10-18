@@ -1,40 +1,42 @@
-import { StyleSheet } from 'react-native';
-import { colors, typography, spacing } from '../../theme';
+import { StyleSheet, Dimensions } from 'react-native';
+import { colors, typography, spacing, radii, shadows } from '../../theme';
+
+const { width } = Dimensions.get('window');
+const cardWidth = (width - spacing.lg * 2 - spacing.md) / 2;
 
 export const styles = StyleSheet.create({
   actionCard: {
     backgroundColor: colors.card,
-    borderRadius: 16,
+    borderRadius: radii.lg,
     padding: spacing.lg,
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
+    justifyContent: 'center',
+    width: cardWidth,
+    height: cardWidth,
+    borderWidth: 1,
+    borderColor: colors.border,
+    ...shadows.md,
   },
   disabledCard: {
     opacity: 0.5,
   },
   actionIcon: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 56,
+    height: 56,
+    borderRadius: radii.md,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: spacing.sm,
+    marginBottom: spacing.md,
   },
   actionIconText: {
-    fontSize: 24,
+    fontSize: 28,
   },
   actionText: {
     fontSize: typography.small,
     color: colors.foreground,
     textAlign: 'center',
-    fontWeight: '500',
+    fontWeight: '600',
+    letterSpacing: -0.2,
   },
   disabledText: {
     opacity: 0.6,
